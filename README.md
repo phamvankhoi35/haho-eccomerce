@@ -72,15 +72,15 @@ export default defineConfig([
 ])
 ``` -->
 
-Phase 1: Project setup & structure
-Công nghệ / tools:
-ReactJS 18+
-Vite hoặc Create React App (CRA)
-React Router v6+
-TypeScript (strongly recommended cho dự án lớn)
-Prettier + ESLint (code style & linting)
-TailwindCSS hoặc Chakra/UI library
-Structure cơ bản:
+ (code style & linting)
+# TailwindCSS hoặc Chakra/UI library
+# Structure cơ bản:Phase 1: Project setup & structure
+# Công nghệ / tools:
+# ReactJS 18+
+# Vite hoặc Create React App (CRA)
+# React Router v6+
+# TypeScript (strongly recommended cho dự án lớn)
+# Prettier + ESLint
 
 src/
   api/          // gọi API
@@ -104,79 +104,79 @@ Mẹo:
 - Dùng middleware cho logging / interceptors nếu cần
 
 Phase 3: Authentication & User flow
-JWT + Refresh token
-Đăng ký / đăng nhập / logout
-Lưu token:
-httpOnly cookie → bảo mật tốt hơn
-fallback: localStorage
-Refresh token tự động khi token hết hạn
-Role-based routing:
-Guest → xem sản phẩm
-User → mua hàng, xem lịch sử
-Admin → quản lý sản phẩm, đơn hàng
-Giao diện user:
-Profile
-Order history
-Cart & Checkout
+- JWT + Refresh token
+- Đăng ký / đăng nhập / logout
+- Lưu token:
+- httpOnly cookie → bảo mật tốt hơn
+- fallback: localStorage
+- Refresh token tự động khi token hết hạn
+- Role-based routing:
+- Guest → xem sản phẩm
+- User → mua hàng, xem lịch sử
+- Admin → quản lý sản phẩm, đơn hàng
+- Giao diện user:
+- Profile
+- Order history
+- Cart & Checkout
 
 Phase 4: Product & Cart
-Product listing page:
-Pagination / Infinite scroll
-Sorting, filtering, search
-Product detail page
-Cart:
-Redux store lưu giỏ hàng
-Persist giỏ hàng bằng localStorage
-Advanced:
-Virtualized list cho >10k items (react-virtualized / react-window)
+- Product listing page:
+- Pagination / Infinite scroll
+- Sorting, filtering, search
+- Product detail page
+- Cart:
+- Redux store lưu giỏ hàng
+- Persist giỏ hàng bằng localStorage
+- Advanced:
+- Virtualized list cho >10k items (react-virtualized / react-window)
 
 Phase 5: Checkout & Payment
-Form checkout với validation
-Integration payment gateway (Stripe, PayPal)
-Order summary, confirmation
-Update stock quantity
+- Form checkout với validation
+- Integration payment gateway (Stripe, PayPal)
+- Order summary, confirmation
+- Update stock quantity
 
 Phase 6: Admin panel
-Dashboard: quản lý sản phẩm, đơn hàng
-Add / Edit / Delete products
-Quản lý user roles
-Advanced:
-Charts / stats (recharts, chart.js)
-Export CSV / PDF đơn hàng
+- Dashboard: quản lý sản phẩm, đơn hàng
+- Add / Edit / Delete products
+- Quản lý user roles
+- Advanced:
+- Charts / stats (recharts, chart.js)
+- Export CSV / PDF đơn hàng
 
 Phase 7: Optimization & best practice
-Code splitting / lazy loading routes
-Memoization: React.memo, useMemo, useCallback
-Image optimization / lazy loading
-SEO + meta tags cho từng page
-Error boundary
+- Code splitting / lazy loading routes
+- Memoization: React.memo, useMemo, useCallback
+- Image optimization / lazy loading
+- SEO + meta tags cho từng page
+- Error boundary
 
 Phase 8: Testing
-Unit tests: Jest + React Testing Library
-Integration tests: cypress / Playwright
-Redux slice test
+- Unit tests: Jest + React Testing Library
+- Integration tests: cypress / Playwright
+- Redux slice test
 
 Phase 9: Deployment & CI/CD
-Hosting: Vercel / Netlify / AWS Amplify
-CI/CD pipeline: GitHub Actions
-HTTPS, security headers, env variables
+- Hosting: Vercel / Netlify / AWS Amplify
+- CI/CD pipeline: GitHub Actions
+- HTTPS, security headers, env variables
 
 Phase 10: Advanced / mở rộng
-i18n (react-i18next)
-Dark mode / theme switcher
-Progressive Web App (PWA)
-WebSocket / real-time notifications
-Micro-frontend / Module Federation (cho dự án lớn cực kỳ phức tạp)
+- i18n (react-i18next)
+- Dark mode / theme switcher
+- Progressive Web App (PWA)
+- WebSocket / real-time notifications
+- Micro-frontend / Module Federation (cho dự án lớn cực kỳ phức tạp)
 
 ✅ Tóm tắt công nghệ “lâu dài” trong dự án
 React 18 + TypeScript
-Redux Toolkit + RTK Query
-Axios
-Tailwind / Component library
-JWT + Refresh token
-React Router v6
-Jest / React Testing Library
-Vercel / Netlify (hoặc AWS Amplify)
+- Redux Toolkit + RTK Query
+- Axios
+- Tailwind / Component library
+- JWT + Refresh token
+- React Router v6
+- Jest / React Testing Library
+- Vercel / Netlify (hoặc AWS Amplify)
 
 [Browser / React App]
         |
@@ -228,13 +228,7 @@ Vercel / Netlify (hoặc AWS Amplify)
                  - GET / POST / PUT (admin: full access) -->
 
 
-
-
-
-
-
-
-# thiet lap reactjs vite typescript tailwind tao layout cho user, admin, lazy loading + suspense, protected routes, role routes, redux + react query, auth login logout, signup thunk, auth service, axios client
+<!-- # thiet lap reactjs vite typescript tailwind tao layout cho user, admin, lazy loading + suspense, protected routes, role routes, redux + react query, auth login logout, signup thunk, auth service, axios client -->
 
 # Tạo project React + TS
 npm create vite@latest my-ecommerce --template react-ts
