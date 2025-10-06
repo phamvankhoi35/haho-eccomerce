@@ -1,4 +1,4 @@
-<!-- # React + TypeScript + Vite
+<!-- <!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -225,7 +225,7 @@ Vercel / Netlify (hoặc AWS Amplify)
         |        - Sync cart items khi add/remove
         |
         |---> /orders
-                 - GET / POST / PUT (admin: full access)
+                 - GET / POST / PUT (admin: full access) -->
 
 
 
