@@ -3,6 +3,7 @@ import authReducer from "../features/auth/authSlice";
 import cartReducer from "../features/cart/cartSlice";
 import productReducer from "../features/product/productSlice";
 import orderReducer from "../features/order/orderSlice"
+import { setupInterceptors } from "../api/axiosClient";
 
 // Configure store
 export const store = configureStore({
@@ -15,5 +16,8 @@ export const store = configureStore({
     middleware: (getDefault) => getDefault(),
 });
 
+setupInterceptors(store);
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+

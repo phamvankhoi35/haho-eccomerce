@@ -2,26 +2,46 @@
 import axiosClient from "./axiosClient";
 
 const authService = {
-    async loginApi(data: { email: string; password: string }) {
-        console.log("Login API call:", axiosClient.defaults.baseURL + "/auth/login");
-        const res = await axiosClient.post("/auth/login", data);
-        return res.data; // { user, accessToken }
+    async sendOtpApi(email: string) {
+        const res = await axiosClient.post('/auth/signup', { email });
+        return res.data;
+    },
+    async verifyOtpApi(data: { email: string; code: string }) {
+        const res = await axiosClient.post('/auth/verify-otp', data);
+        return res.data; // { status, message, email }
+    },
+    async completeSignupApi(data: { email: string; password: string; fullname: string }) {
+        const res = await axiosClient.post('/auth/complete-signup', data);
+        return res.data; // { status, message, user, accessToken }
+    },
+    async resendOtpApi(email: string) {
+        const res = await axiosClient.post('/auth/resend-otp', { email });
+        return res.data; // { message }
     },
 
-    async signupApi(data: any) {
-        const res = await axiosClient.post("/auth/signup", data);
-        return res.data; // { user, accessToken }
+    async loginApi(data: { email: string; password: string }) {
+        const res = await axiosClient.post('/auth/login', data);
+        return res.data;
+    },
+
+    async getProfileApi() {
+        const res = await axiosClient.get("/auth/profile")
+        return res.data;
+    },
+
+    async updateProfileApi(data: { fullname?: string, avatar?: string }) {
+        const res = await axiosClient.put("/auth/update-profile", data)
+        return res.data;
     },
 
     async logoutApi() {
-        await axiosClient.post("/auth/logout", {})
-    },
-
-    async refreshTokenApi() {
-        const res = await axiosClient.post("/auth/refresh", {}, { withCredentials: true });
+        const res = await axiosClient.post("/auth/logout");
         return res.data;
     },
-    // getProfileApi: () => axiosClient.get('/auth/profile').then((r) => r.data),
+    async refreshTokenApi() {
+        const res = await axiosClient.post("/auth/refresh", {});
+        return res.data;
+    },
 };
 
 export default authService;

@@ -24,7 +24,7 @@ const PageNotFound = lazy(() => import("../pages/PageNotFound"));
 interface RouteConfig {
     path: string;
     element: React.ReactNode;
-    roles?: "user" | "admin" | "seller"[];
+    roles?: ("user" | "admin" | "seller")[];
     guestOnly?: boolean; // thêm flag cho login/signup
     layout?: ComponentType<{ children: ReactNode }>;
 }
@@ -34,8 +34,6 @@ const publicRoutes: RouteConfig[] = [
     { path: "/", element: <Home /> },
     { path: "/cart", element: <Cart /> },
     { path: "/403", element: <Forbidden /> },
-
-    { path: "*", element: <PageNotFound /> },
 ];
 
 // Guest routes

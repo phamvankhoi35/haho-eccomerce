@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ProtectedRoute from "./routes/ProtectedRoute";
@@ -6,8 +6,17 @@ import GuestRoute from "./routes/GuestRoute";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { routes } from './routes/routes';
+import PageNotFound from './pages/PageNotFound';
+import { useAppDispatch } from './app/hooks';
+import { refreshAccessToken } from './features/auth/authThunk';
 
 function App() {
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(refreshAccessToken());
+    }, [dispatch]);
 
     return (
         <>
@@ -17,11 +26,9 @@ function App() {
                     <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
                         <Routes>
                             {routes.map((r) => {
-                                const elementWithLayout = r.layout ? (
-                                    <r.layout>{r.element}</r.layout>
-                                ) : (
-                                    r.element
-                                );
+                                const elementWithLayout = r.layout
+                                    ? (<r.layout>{r.element}</r.layout>)
+                                    : (r.element);
 
                                 // Guest-only routes
                                 if (r.guestOnly) {
@@ -47,7 +54,7 @@ function App() {
 
                             <Route
                                 path="*"
-                                element={<div className="p-4 text-center">404 | Page not found</div>}
+                                element={<PageNotFound />}
                             />
                         </Routes>
                     </Suspense>

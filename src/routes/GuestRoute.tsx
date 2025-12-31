@@ -1,10 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useAuth } from "../hooks/useAuth";
 
 export default function GuestRoute() {
-    const { isAuthenticated, loading } = useSelector((state: any) => state.auth);
+    const { isAuthenticated, authLoading } = useAuth();
 
-    if (loading) return <div className="p-4 text-center">Loading...</div>;
+    if (authLoading) return <div className="p-4 text-center">Loading...</div>;
 
     if (isAuthenticated) {
         // Đã login thì không cho vào login/register → redirect home
